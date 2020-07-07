@@ -13,7 +13,7 @@ dependencies {
 }
 
 bootJar {
-    mainClassName = 'com.my.poc.springcloudcontractsconsumerapproach1.SpringCloudContractsConsumerApproach1Application'
+    mainClassName = 'com.my.poc.springcloudcontractsconsumerapproach2.SpringCloudContractsConsumerApproach2Application'
 }
 
 bootRun {

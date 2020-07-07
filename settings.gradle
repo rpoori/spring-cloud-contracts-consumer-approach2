@@ -2,4 +2,5 @@ rootProject.name = 'spring-cloud-contracts-consumer-approach2'
 include 'apis:sample-api'
 include 'domains:notification'
 include 'implementations:notification-store-impl'
+include 'integration-contracts:user-service-contracts'
 

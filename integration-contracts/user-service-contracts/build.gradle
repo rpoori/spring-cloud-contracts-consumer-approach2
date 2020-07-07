@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'spring-cloud-contract'
+
+group 'com.my.poc'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+dependencies {
+    implementation project(':implementations:notification-store-impl')
+    testImplementation "org.springframework.cloud:spring-cloud-starter-contract-verifier:${springCloudContractVersion}"
+}
+
+contracts {
+    testMode = 'EXPLICIT'
+    basePackageForTests = 'com.my.poc.userservicecontracts'
+    baseClassForTests = 'com.my.poc.userservicecontracts.UserServiceBaseContractTest'
+}

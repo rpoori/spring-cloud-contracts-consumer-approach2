@@ -35,4 +35,16 @@ allprojects {
 	}
 }
 
+task isolatedTest {
+	group 'verification'
+	
+	def isolatedTests = subprojects
+	.findAll { it.name in ['apis', 'domains', 'implementations'] }
+	.collect {it.subprojects}
+	.flatten()
+	.collect { it.tasks.withType(Test) }
+
+	dependsOn(isolatedTests)
+}
+
 defaultTasks 'clean', 'build'
